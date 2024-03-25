@@ -1,1 +1,18 @@
 <h2>Products</h2>
+<div *ngFOr="let product of products">
+  <h3>{{product.name}}</h3>
+</div>
+
+<!--
+
+With *ngFor, the <div> repeats for each product in the list.
+
+Structural directives shape or reshape the DOM's structure, by adding, 
+removing, and manipulating elements. For more information about structural 
+directives, see Structural directives.
+
+Inside the <div>, add an <h3> and {{ product.name }}. The {{ product.name }} 
+statement is an example of Angular's interpolation syntax. 
+Interpolation {{ }} lets you render the property value as text.
+
+-->
