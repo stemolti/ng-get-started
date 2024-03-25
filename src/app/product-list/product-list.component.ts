@@ -22,4 +22,8 @@ Object literals ({ ...obj, key: 'value' })
 
 products = [...products];
 
+share(){
+  window.alert('The product has been shared!');
+}
+
 }
