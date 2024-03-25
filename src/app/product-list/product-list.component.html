@@ -1,9 +1,9 @@
 <h2>Products</h2>
 <div *ngFor="let product of products">
-  <h3> <a [title]="product.name + ' details'" >{{product.name}}</a></h3>
-<p *ngIf="product.description" >
-  Description: {{product.description}}
-</p>
+  <h3> <a [title]="product.name + ' details'">{{product.name}}</a></h3>
+  <p *ngIf="product.description">
+    Description: {{product.description}}
+  </p>
 </div>
 
 <!--
@@ -17,5 +17,11 @@ directives, see Structural directives.
 Inside the <div>, add an <h3> and {{ product.name }}. The {{ product.name }} 
 statement is an example of Angular's interpolation syntax. 
 Interpolation {{ }} lets you render the property value as text.
+
+-->
+
+<!--
+
+Angular doesn't create the <p> element if the product's description property is empty.
 
 -->
