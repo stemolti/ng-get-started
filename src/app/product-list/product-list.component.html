@@ -5,7 +5,13 @@
     Description: {{product.description}}
   </p>
   <button type="button" (click)="share()"> SHARE</button>
-  <app-product-alerts></app-product-alerts>
+  <!--
+    PASS DATA TO A CHILD
+
+    Pass the current product as input to the app-product-alerts child
+    component using property binding [product], ssing
+  -->
+  <app-product-alerts [product]="product"></app-product-alerts>
 </div>
 
 <!--
