@@ -1,3 +1,12 @@
+<!--
+
+PASS DATA TO A PARENT COMPONENT
+
+In the child component html, update the button with an event binding to call the emit() method.
+
+emit(value?: T): void -> emit an event containing a given value
+-->
+
 <p *ngIf="product && product.price > 700">
-  <button>NOTIFY ME</button>
+  <button (click) = "notify.emit()">NOTIFY ME</button>
 </p>

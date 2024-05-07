@@ -1,6 +1,18 @@
 <h2>Products</h2>
 <div *ngFor="let product of products">
-  <h3> <a [title]="product.name + ' details'">{{product.name}}</a></h3>
+  <!--  
+
+    The RouterLink directive helps you customize the anchor element. In this case, the route, or URL, contains one fixed segment, /products. The final segment is variable, inserting the id property of the current product. 
+    For example, the URL for a product with an id of 1 would be similar to https://localhost:4200/products/1.
+
+  -->
+  <h3>
+    <a 
+      [title]="product.name + ' details'" 
+      [routerLink]="['/products', product.id]">
+      {{product.name}}
+    </a>
+  </h3>
   <p *ngIf="product.description">
     Description: {{product.description}}
   </p>
@@ -9,10 +21,23 @@
     PASS DATA TO A CHILD
 
     Pass the current product as input to the app-product-alerts child
-    component using property binding [product], ssing
+    component using property binding [product].
+
+    [product] is an attribute defined on product-alert.ts with @Input()
+
   -->
-  <app-product-alerts [product]="product"></app-product-alerts>
+
+  <!--
+
+
+In product-list.component.html, bind <app-product-alerts> to the onNotify() method of the product list component.
+
+  -->
+  <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
 </div>
+
+
+
 
 <!--
 
