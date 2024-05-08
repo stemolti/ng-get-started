@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product.entity';
 import { ActivatedRoute } from '@angular/router';
 import { products } from '../../products';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -33,9 +34,18 @@ product: Product | undefined;
 
   By injecting ActivatedRoute, you are configuring the component to use a service. 
 */
-constructor( private route: ActivatedRoute){
+
+// Inject the cart service by adding it to the constructor()
+constructor( private route: ActivatedRoute, private cartService: CartService){
 
 }
+
+
+addToCart(product: Product){
+  this.cartService.addToCart(product);
+  window.alert('Your product has been added to the cart!');
+}
+
 /*
 
 The implements OnInit statement indicates that the class implements the OnInit interface, requiring the implementation of the ngOnInit method for initialization tasks when the component is created.
