@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './components/shipping/shipping.component';
+import { ReactiveFormsModule } from '@angular/forms';
 /*
 Added component to App module to make
 the component available to other components in the application
@@ -29,6 +30,7 @@ the component available to other components in the application
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     //Adding routes for list of product list and 
     // product-details and specifying components that
     // the application should display
