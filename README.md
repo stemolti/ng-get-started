@@ -31,3 +31,23 @@ The @Injectable() metadata allows the service class to be used with the dependen
   Angular registers its own providers with every injector, for services that Angular defines. 
   
   You can register your own providers for services that your application needs.
+
+  # HttpCLient
+  Servers often return data in the form of a stream. Streams are useful because they make it easy to transform the returned data and make modifications to the way you request that data. Angular HttpClient is a built-in way to fetch data from external APIs and provide them to your application as a stream.
+
+  **HttpCLient** performs HTTP requests. This service is available as an injectable class, with methods to perform HTTP requests. Each request method has multiple signatures, and the return type varies based on the signature that is called (mainly the values of observe and responseType).
+
+
+    * In app.module.ts, import HttpClientModule from the @angular/common/http package at the top of the file with the other imports.
+
+    * To register Angular's HttpClient providers globally, add **HttpClientModule** to the AppModule **@NgModule()** imports array.
+  
+
+  # Async
+  The async pipe returns the latest value from a stream of data and continues to do so for the life of a given component. When Angular destroys that component, the async pipe automatically stops.
+
+  The async pipe *subscribes* to an **Observable** or **Promise** and returns the latest value it has emitted. 
+  
+  When a new value is emitted, the async pipe marks the component to be checked for changes. When the component gets destroyed, the async pipe *unsubscribes* automatically to avoid potential memory leaks. 
+  
+  When the reference of the expression changes, the async pipe automatically unsubscribes from the old Observable or Promise and subscribes to the new one.
